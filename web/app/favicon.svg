@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" fill="#000000"/>
+
+  <!-- Tor onion icon with three layers -->
+  <!-- Outer ring - purple -->
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#b026ff" stroke-width="3" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Middle ring - green -->
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#00ff41" stroke-width="3" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Inner ring - cyan -->
+  <circle cx="50" cy="50" r="18" fill="none" stroke="#00d9ff" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- Center dot -->
+  <circle cx="50" cy="50" r="6" fill="#b026ff" filter="url(#glow)"/>
+
+  <!-- Onion top sprout -->
+  <path d="M 50 8 Q 45 12, 50 16 Q 55 12, 50 8" fill="#00ff41" filter="url(#glow)"/>
+  <line x1="50" y1="8" x2="50" y2="16" stroke="#00ff41" stroke-width="2" filter="url(#glow)"/>
+</svg>

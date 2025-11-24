@@ -1,0 +1,29 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts --network custom",
+    "deploy:local": "hardhat run scripts/deploy.ts --network hardhat",
+    "generate-wallet": "hardhat run scripts/generateWallet.ts",
+    "transfer-ownership": "hardhat run scripts/transferOwnership.ts --network custom"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/node": "^24.10.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.0",
+    "typescript": "^5.9.3"
+  }
+}

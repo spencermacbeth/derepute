@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+:root {
+  --tor-purple: #7D4698;
+  --tor-dark-purple: #59316B;
+  --tor-green: #68B030;
+  --neon-green: #00ff41;
+  --neon-purple: #b026ff;
+  --cyber-blue: #00d9ff;
+  --background: #000000;
+  --foreground: #00ff41;
+}
+
+@theme inline {
+  --color-background: #000000;
+  --color-foreground: #00ff41;
+  --color-neon-green: #00ff41;
+  --color-neon-purple: #b026ff;
+  --color-cyber-blue: #00d9ff;
+  --color-tor-purple: #7D4698;
+  --color-tor-dark-purple: #59316B;
+  --color-tor-green: #68B030;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'JetBrains Mono', 'Share Tech Mono', 'Courier New', monospace;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Starfield background */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #000;
+}
+
+.starfield::before,
+.starfield::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+    radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
+    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+    radial-gradient(2px 2px at 90px 10px, #eee, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.5;
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+.starfield::after {
+  background-image:
+    radial-gradient(1px 1px at 40px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 110px 20px, #eee, transparent),
+    radial-gradient(2px 2px at 160px 90px, #fff, transparent);
+  background-size: 250px 250px;
+  animation: twinkle 7s ease-in-out infinite reverse;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.cyber-gradient {
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(176, 38, 255, 0.1) 100%);
+  border-bottom: 2px solid var(--neon-green);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.cyber-card {
+  background: rgba(0, 20, 0, 0.8);
+  border: 2px solid var(--neon-green);
+  border-radius: 4px;
+  box-shadow:
+    0 0 10px rgba(0, 255, 65, 0.3),
+    inset 0 0 20px rgba(0, 255, 65, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: var(--neon-purple);
+  box-shadow:
+    0 0 20px rgba(176, 38, 255, 0.5),
+    inset 0 0 30px rgba(176, 38, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.neon-text {
+  color: var(--neon-green);
+  text-shadow:
+    0 0 2px var(--neon-green),
+    0 0 4px var(--neon-green);
+}
+
+.purple-neon-text {
+  color: var(--neon-purple);
+  text-shadow:
+    0 0 3px var(--neon-purple),
+    0 0 6px var(--neon-purple),
+    0 0 10px var(--neon-purple);
+}
+
+.cyber-button {
+  background: transparent;
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.cyber-button:hover:not(:disabled) {
+  background: var(--neon-green);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-green);
+}
+
+.cyber-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 2px);
+  }
+  94% {
+    transform: translate(2px, -2px);
+  }
+  96% {
+    transform: translate(-2px, -2px);
+  }
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 65, 0.02) 51%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}

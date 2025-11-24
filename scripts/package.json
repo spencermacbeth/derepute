@@ -1,0 +1,26 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "ts-node src/fetchRelayData.ts",
+    "process": "ts-node src/processDownloadedData.ts",
+    "update": "ts-node src/updateContract.ts",
+    "update:dry-run": "ts-node src/updateContract.ts --dry-run",
+    "test:read": "ts-node src/testRead.ts",
+    "build": "tsc",
+    "start": "node dist/updateContract.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^24.10.1",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

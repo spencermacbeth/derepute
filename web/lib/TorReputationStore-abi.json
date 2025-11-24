@@ -1,0 +1,476 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "updater",
+        "type": "address"
+      }
+    ],
+    "name": "AuthorizedUpdaterAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "updater",
+        "type": "address"
+      }
+    ],
+    "name": "AuthorizedUpdaterRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "RelayBatchUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "fingerprint",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "nickname",
+        "type": "string"
+      }
+    ],
+    "name": "RelayUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "updater",
+        "type": "address"
+      }
+    ],
+    "name": "addAuthorizedUpdater",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "authorizedUpdaters",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "fingerprint",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "nickname",
+            "type": "string"
+          },
+          {
+            "internalType": "string[]",
+            "name": "flags",
+            "type": "string[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "uptime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "bandwidth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "consensusWeight",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "asNumber",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastSeen",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "running",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct TorReputationStore.RelayData[]",
+        "name": "relays",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "batchUpdateRelays",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getFingerprintByIndex",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "fingerprint",
+        "type": "string"
+      }
+    ],
+    "name": "getRelay",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "fingerprint",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "nickname",
+            "type": "string"
+          },
+          {
+            "internalType": "string[]",
+            "name": "flags",
+            "type": "string[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "uptime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "bandwidth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "consensusWeight",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "asNumber",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastSeen",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "running",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct TorReputationStore.RelayData",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRelayCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "offset",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRelaysPaginated",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "fingerprint",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "nickname",
+            "type": "string"
+          },
+          {
+            "internalType": "string[]",
+            "name": "flags",
+            "type": "string[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "uptime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "bandwidth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "consensusWeight",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "asNumber",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastSeen",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "running",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct TorReputationStore.RelayData[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "fingerprint",
+        "type": "string"
+      }
+    ],
+    "name": "relayExists",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "updater",
+        "type": "address"
+      }
+    ],
+    "name": "removeAuthorizedUpdater",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_fingerprint",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_nickname",
+        "type": "string"
+      },
+      {
+        "internalType": "string[]",
+        "name": "_flags",
+        "type": "string[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_uptime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_bandwidth",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_consensusWeight",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_country",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_asNumber",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_lastSeen",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_running",
+        "type": "bool"
+      }
+    ],
+    "name": "updateRelay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
